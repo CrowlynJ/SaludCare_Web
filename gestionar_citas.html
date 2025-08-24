@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Citas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 80px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        select, input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button.cancel {
+            background-color: #e74c3c;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .message {
+            margin-top: 15px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gestionar Citas</h2>
+        <form>
+            <label for="cita">Selecciona una cita:</label>
+            <select id="cita" name="cita">
+                <!-- Las citas se cargarán dinámicamente desde el backend -->
+            </select>
+            <div class="message">No tienes citas agendadas.</div>
+
+            <label for="nueva_fecha">Nueva fecha:</label>
+            <input type="date" id="nueva_fecha" name="nueva_fecha">
+
+            <label for="nueva_hora">Nueva hora:</label>
+            <input type="time" id="nueva_hora" name="nueva_hora">
+
+            <div style="display: flex; justify-content: space-between;">
+                <button type="submit">Modificar</button>
+                <button type="button" class="cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
