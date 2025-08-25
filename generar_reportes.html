@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generar Reportes</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Notificaciones - Administrador
+  </title>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #007BFF;
+            padding: 10px;
+            color: white;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    
+        .container {
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+  </style>
+ </head>
+ <body>
+  <nav style="background-color:#3498db; padding:10px; text-align:center;">
+   <a href="index.html">
+    Inicio
+   </a>
+   <a href="gestionar_usuarios.html">
+    Gestionar Usuarios
+   </a>
+   <a href="notificaciones.html">
+    Notificaciones
+   </a>
+   <a href="reportes.html">
+    Reportes
+   </a>
+  </nav>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin-top: 40px;">
+   <div class="container">
+    <h2>
+     Generar Reportes
+    </h2>
+    <p>
+     El administrador puede generar reportes del sistema como:
+    </p>
+    <ul>
+     <li>
+      Cantidad total de usuarios registrados en un día.
+     </li>
+     <li>
+      Número total de personas registradas en el sistema.
+     </li>
+    </ul>
+    <form>
+     <label for="tipo">
+      Tipo de reporte:
+     </label>
+     <select id="tipo" name="tipo">
+      <option value="usuarios">
+       Usuarios
+      </option>
+      <option value="citas">
+       Citas
+      </option>
+      <option value="actividad">
+       Actividad
+      </option>
+     </select>
+     <br/>
+     <br/>
+     <label for="fecha">
+      Fecha:
+     </label>
+     <div style="padding: 10px; display: inline-block;">
+      <input id="fecha" name="fecha" type="date"/>
+     </div>
+     <br/>
+     <br/>
+     <button type="submit">
+      Generar reporte
+     </button>
+    </form>
+    <p id="mensaje">
+     El reporte se generará y se descargará en formato .txt.
+    </p>
+   </div>
+   <div class="container">
+   </div>
+   <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 30px;">
+   </div>
+  </div>
+ </body>
+</html>
+
+</body>
+</html>

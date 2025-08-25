@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Gestionar Usuarios</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #007BFF;
+            padding: 10px;
+            color: white;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<nav style="background-color:#3498db; padding:10px; text-align:center;"><a href="index.html">Inicio</a><a href="gestionar_usuarios.html">Gestionar Usuarios</a><a href="notificaciones.html">Notificaciones</a><a href="reportes.html">Reportes</a></nav>
+<div class="container">
+<h2>Gestionar Usuarios</h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Nombre</th>
+<th>Correo</th>
+<th>Teléfono</th>
+<th>Especialidad</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<form style="font-family: Arial, sans-serif; font-size: 16px; padding: 20px;">
+<h3>Registrar Nuevo Usuario</h3>
+<label for="tipo" style="margin-bottom: 12px; display: block;">Tipo de Usuario</label>
+<select id="tipo" name="tipo" style="margin-bottom: 12px; display: block;">
+<option value="paciente">Paciente</option>
+<option value="medico">Médico</option>
+<option value="recepcionista">Recepcionista</option>
+</select>
+<label for="nombre" style="margin-bottom: 12px; display: block;">Nombre</label>
+<input id="nombre" name="nombre" style="margin-bottom: 12px; display: block;" type="text"/>
+<label for="correo" style="margin-bottom: 12px; display: block;">Correo</label>
+<input id="correo" name="correo" style="margin-bottom: 12px; display: block;" type="email"/>
+<label for="telefono" style="margin-bottom: 12px; display: block;">Teléfono</label>
+<input id="telefono" name="telefono" style="margin-bottom: 12px; display: block;" type="text"/>
+<label for="especialidad" style="margin-bottom: 12px; display: block;">Especialidad (solo si es médico)</label>
+<input id="especialidad" name="especialidad" style="margin-bottom: 12px; display: block;" type="text"/>
+<button type="submit">Registrar Usuario</button>
+</form>
+</div>
+</body>
+</html>

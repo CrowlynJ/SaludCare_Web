@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notificaciones</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Notificaciones - Administrador</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #007BFF;
+            padding: 10px;
+            color: white;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    
+        .container {
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<nav style="background-color:#3498db; padding:10px; text-align:center;">
+<a href="index.html">Inicio</a><a href="gestionar_usuarios.html">Gestionar Usuarios</a><a href="notificaciones.html">Notificaciones</a><a href="reportes.html">Reportes</a></nav>
+<div class="container">
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 30px;"><h2>Configuración de Notificaciones</h2><form>
+<label for="tipo">Tipo de notificación:</label>
+<select id="tipo" name="tipo">
+<option value="recordatorio">Recordatorio de cita</option>
+<option value="cancelacion">Cancelación de cita</option>
+<option value="reprogramacion">Reprogramación de cita</option>
+</select>
+<label for="destinatario">Destinatario (correo electrónico):</label>
+<input id="destinatario" name="destinatario" required="" type="email"/>
+<label for="mensaje">Mensaje personalizado:</label>
+<textarea cols="80" id="mensaje" name="mensaje" placeholder="Escribe aquí el mensaje..." rows="12"></textarea>
+<button type="submit">Validar configuración</button>
+</form></div></body>
+</html>
+
+</body>
+</html>
