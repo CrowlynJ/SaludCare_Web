@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Citas - Recepcionista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #3498db;
+            padding: 8px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #3498db;
+            text-align: center;
+        }
+        .search-box {
+            background-color: #f4f6f7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .search-box label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .search-box input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        .action-buttons button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            margin-right: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .status-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Consultar Citas</a>
+        <a href="#">Solicitar Cita</a>
+        <a href="#">Gestionar Citas</a>
+        <a href="#">Consultar Agenda</a>
+        <a href="#">Finalizar Sesión</a>
+    </div>
+
+    <div class="container">
+        <h2>Gestionar Citas</h2>
+
+        <div class="search-box">
+            <label for="search">Buscar paciente por nombre o cédula:</label>
+            <input type="text" id="search" name="search" placeholder="Ingrese nombre o cédula del paciente">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Especialidad</th>
+                    <th>Médico</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas serán rellenadas dinámicamente por el backend -->
+            </tbody>
+        </table>
+
+        <div class="status-message">
+            <!-- Mensajes de estado aparecerán aquí -->
+        </div>
+    </div>
+</body>
+</html>

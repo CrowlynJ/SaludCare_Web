@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Solicitar Cita - Recepcionista</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #3498db;
+            padding: 8px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #3498db;
+            text-align: center;
+        }
+        form {
+            background-color: #f4f6f7;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        select, input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+<a href="#">Consultar Citas</a>
+<a href="#">Solicitar Cita</a>
+<a href="#">Gestionar Citas</a>
+<a href="#">Consultar Agenda</a>
+<a href="#">Finalizar Sesión</a>
+</div>
+<div class="container">
+<h2>Solicitar Cita Médica</h2>
+<form>
+<label for="paciente">Paciente:</label>
+<input id="paciente" name="paciente" placeholder="Buscar por nombre o cédula" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;" type="text"/>
+<label for="especialidad">Especialidad:</label>
+<select id="especialidad" name="especialidad">
+<option value="">-- Seleccionar especialidad --</option>
+</select>
+<label for="medico">Médico:</label>
+<select id="medico" name="medico">
+<option value="">-- Seleccionar médico --</option>
+</select>
+<label for="fecha">Fecha:</label>
+<input id="fecha" name="fecha" type="date"/>
+<label for="hora">Hora:</label>
+<input id="hora" name="hora" type="time"/>
+<button type="submit">Solicitar Cita</button>
+</form>
+</div>
+</body>
+</html>

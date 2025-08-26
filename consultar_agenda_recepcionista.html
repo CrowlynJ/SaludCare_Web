@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Agenda - Recepcionista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #3498db;
+            text-align: center;
+        }
+        .search-section {
+            background-color: #f4f6f7;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .search-section label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .search-section input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-section button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+        }
+        td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        .status-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Consultar Citas</a>
+        <a href="#">Solicitar Cita</a>
+        <a href="#">Gestionar Citas</a>
+        <a href="#">Consultar Agenda</a>
+        <a href="#">Finalizar Sesión</a>
+    </div>
+
+    <div class="container">
+        <h2>Consultar Agenda Médica</h2>
+        <div class="search-section">
+            <label for="search">Buscar médico por nombre o especialidad:</label>
+            <input type="text" id="search" name="search" placeholder="Ej. Dr. López o Cardiología">
+            <button>Buscar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Especialidad</th>
+                    <th>Médico</th>
+                    <th>Disponibilidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Datos dinámicos del backend -->
+            </tbody>
+        </table>
+
+        <div class="status-message">
+            <!-- Mensajes de estado del sistema -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Consultar Citas - Recepcionista</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+        }
+        nav {
+            background-color: #3498db;
+            padding: 8px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 17px;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #3498db;
+            text-align: center;
+        }
+        select, button {
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            border: 1px solid #bdc3c7;
+            padding: 8px;
+        }
+        td {
+            border: 1px solid #bdc3c7;
+            padding: 8px;
+            text-align: left;
+        }
+        .status-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+<a href="#">Consultar Citas</a><a href="#">Solicitar Cita</a><a href="#">Gestionar Citas</a><a href="#">Consultar Agenda</a><a href="#">Finalizar Sesión</a></nav>
+<div class="container">
+<h2>Consultar Citas Médicas</h2>
+<label for="paciente">Seleccionar Paciente:</label>
+<select id="paciente"><option value="">-- Seleccione --</option></select>
+<br/>
+<button onclick="mostrarCitas('programadas')">Citas Programadas</button>
+<button onclick="mostrarCitas('anteriores')">Citas Anteriores</button>
+<div id="tabla-citas">
+<table>
+<thead>
+<tr>
+<th>Fecha</th>
+<th>Hora</th>
+<th>Médico</th>
+<th>Especialidad</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="status-message" style="display:none;">No hay citas disponibles.</div>
+</div>
+<script>
+        function mostrarCitas(tipo) {
+            // Simulación de lógica para mostrar citas
+            const tabla = document.getElementById('tabla-citas');
+            const mensaje = document.querySelector('.status-message');
+            if (tipo === 'programadas') {
+                tabla.style.display = 'block';
+                mensaje.style.display = 'none';
+            } else {
+                tabla.style.display = 'none';
+                mensaje.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
