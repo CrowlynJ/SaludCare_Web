@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Gestión de Agenda - Médico</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filters label {
+            margin-right: 10px;
+        }
+        .filters input {
+            margin-right: 20px;
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+    
+        .contenido {
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+<nav style="background-color:#3498db; padding: 5px 10px; text-align:center; ">
+<a href="#" style="color: white; font-family: Arial, sans-serif; font-size: 16px; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; margin: 0 8px">Inicio</a>
+<a href="#" style="color: white; font-family: Arial, sans-serif; font-size: 16px; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; margin: 0 8px">Consultar Citas</a>
+<a href="#" style="color: white; font-family: Arial, sans-serif; font-size: 16px; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; margin: 0 8px">Gestión de Agenda</a>
+<a href="#" style="color: white; font-family: Arial, sans-serif; font-size: 16px; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; margin: 0 8px">Historial Médico</a>
+<a href="#" style="color: white; font-family: Arial, sans-serif; font-size: 16px; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; margin: 0 8px">Perfil del Paciente</a>
+</nav>
+<div class="contenido">
+<h2>Gestión de Agenda</h2>
+<p>Aquí el médico podrá agregar, modificar o eliminar su disponibilidad.</p>
+<!-- Aquí se agregará el formulario o tabla correspondiente -->
+</div>
+<h2>Disponibilidad Actual</h2>
+<table border="1" id="agendaTable" style="width:100%; border-collapse: collapse;">
+<thead style="background-color: #2c3e50; color: white;">
+<tr>
+<th style="background-color: #3498db; color: white;">Fecha</th>
+<th style="background-color: #3498db; color: white;">Hora de Inicio</th>
+<th style="background-color: #3498db; color: white;">Hora de Fin</th>
+<th style="background-color: #3498db; color: white;">Acciones</th>
+</tr>
+</thead>
+<tbody>
+<!-- Filas de disponibilidad se agregarán dinámicamente -->
+</tbody>
+</table>
+<h2>Gestión de Disponibilidad</h2>
+<form id="agendaForm">
+<label for="fecha">Fecha:</label>
+<input id="fecha" name="fecha" required="" type="date"/><br/><br/>
+<label for="hora_inicio">Hora de Inicio:</label>
+<input id="hora_inicio" name="hora_inicio" required="" type="time"/><br/><br/>
+<label for="hora_fin">Hora de Fin:</label>
+<input id="hora_fin" name="hora_fin" required="" type="time"/><br/><br/>
+<button onclick="registrarDisponibilidad()" type="button">Registrar</button>
+<button onclick="modificarDisponibilidad()" type="button">Modificar</button>
+<button onclick="eliminarDisponibilidad()" type="button">Eliminar</button>
+</form>
+<p id="mensaje" style="color: red;"></p>
+<script>
+let agenda = [];
+let selectedIndex = -1;
+
+function actualizarTabla() {
+    const tbody = document.querySelector("#agendaTable tbody");
+    tbody.innerHTML = "";
+    agenda.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.fecha}</td>
+            <td>${item.hora_inicio}</td>
+            <td>${item.hora_fin}</td>
+            <td><button onclick="seleccionarFila(${index})">Seleccionar</button></td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+function seleccionarFila(index) {
+    selectedIndex = index;
+    const item = agenda[index];
+    document.getElementById("fecha").value = item.fecha;
+    document.getElementById("hora_inicio").value = item.hora_inicio;
+    document.getElementById("hora_fin").value = item.hora_fin;
+    document.getElementById("mensaje").textContent = "";
+}
+
+function validarDuplicado(fecha, hora_inicio, hora_fin) {
+    return agenda.some((item, idx) => 
+        idx !== selectedIndex &&
+        item.fecha === fecha &&
+        item.hora_inicio === hora_inicio &&
+        item.hora_fin === hora_fin
+    );
+}
+
+function registrarDisponibilidad() {
+    const fecha = document.getElementById("fecha").value;
+    const hora_inicio = document.getElementById("hora_inicio").value;
+    const hora_fin = document.getElementById("hora_fin").value;
+
+    if (validarDuplicado(fecha, hora_inicio, hora_fin)) {
+        document.getElementById("mensaje").textContent = "Error: Ya existe una disponibilidad con esa fecha y hora.";
+        return;
+    }
+
+    agenda.push({ fecha, hora_inicio, hora_fin });
+    actualizarTabla();
+    document.getElementById("agendaForm").reset();
+    document.getElementById("mensaje").textContent = "Disponibilidad registrada correctamente.";
+}
+
+function modificarDisponibilidad() {
+    if (selectedIndex === -1) {
+        document.getElementById("mensaje").textContent = "Seleccione una fila para modificar.";
+        return;
+    }
+
+    const fecha = document.getElementById("fecha").value;
+    const hora_inicio = document.getElementById("hora_inicio").value;
+    const hora_fin = document.getElementById("hora_fin").value;
+
+    if (validarDuplicado(fecha, hora_inicio, hora_fin)) {
+        document.getElementById("mensaje").textContent = "Error: Ya existe una disponibilidad con esa fecha y hora.";
+        return;
+    }
+
+    agenda[selectedIndex] = { fecha, hora_inicio, hora_fin };
+    actualizarTabla();
+    document.getElementById("agendaForm").reset();
+    selectedIndex = -1;
+    document.getElementById("mensaje").textContent = "Disponibilidad modificada correctamente.";
+}
+
+function eliminarDisponibilidad() {
+    if (selectedIndex === -1) {
+        document.getElementById("mensaje").textContent = "Seleccione una fila para eliminar.";
+        return;
+    }
+
+    agenda.splice(selectedIndex, 1);
+    actualizarTabla();
+    document.getElementById("agendaForm").reset();
+    selectedIndex = -1;
+    document.getElementById("mensaje").textContent = "Disponibilidad eliminada correctamente.";
+}
+</script>
+</body>
+</html>

@@ -1,89 +1,142 @@
 
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<title>Perfil del Paciente</title>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eef2f3;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        .container {
-            max-width: 500px;
-            margin: 60px auto;
-            background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .info {
-            margin-bottom: 15px;
-        }
-        .info label {
-            font-weight: bold;
-            display: block;
-        }
-        .info span {
-            display: block;
-            margin-top: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Perfil del Paciente - Médico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+    }
+    nav {
+      background-color: #3498db;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h2 {
+      color: #3498db;
+      margin: 20px;
+      text-align: center;
+    }
+    .busqueda {
+      width: 90%;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .busqueda input {
+      padding: 8px;
+      width: 300px;
+      margin-right: 10px;
+    }
+    .busqueda button {
+      padding: 8px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    form {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #f8f9f9;
+      padding: 20px;
+      border: 1px solid #bdc3c7;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #bdc3c7;
+    }
+    form button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-<nav style="background-color:#3498db; padding:10px; text-align:center;">
-<a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">Inicio</a>
-<a href="registro_paciente.html" style="color:white; margin:0 15px; text-decoration:none;">Registro</a>
-<a href="agendar_cita.html" style="color:white; margin:0 15px; text-decoration:none;">Agendar Cita</a>
-<a href="gestionar_citas.html" style="color:white; margin:0 15px; text-decoration:none;">Gestionar Citas</a>
-<a href="consultar_agenda.html" style="color:white; margin:0 15px; text-decoration:none;">Consultar Agenda</a>
-<a href="perfil_paciente.html" style="color:white; margin:0 15px; text-decoration:none;">Perfil</a>
-<a href="historial_medico.html" style="color:white; margin:0 15px; text-decoration:none;">Historial Médico</a>
-</nav>
 
-<div class="container">
-<h2>Perfil del Paciente</h2>
-<div class="info">
-<label>Nombre completo:</label>
-<span>--</span>
-</div>
-<div class="info">
-<label>Dirección:</label>
-<span>--</span>
-</div>
-<div class="info">
-<label>Teléfono:</label>
-<span>--</span>
-</div>
-<div class="info">
-<label>Correo electrónico:</label>
-<span>--</span>
-</div>
-<div class="info">
-<label>Estatura:</label>
-<span>--</span>
-</div>
-<div class="info">
-<label>Peso:</label>
-<span>--</span>
-</div>
-</div>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Consultar Citas</a>
+    <a href="#">Gestión de Agenda</a>
+    <a href="#">Historial Médico</a>
+    <a href="#">Perfil del Paciente</a>
+  </nav>
+
+  <h2>Perfil del Paciente</h2>
+
+  <div class="busqueda">
+    <input type="text" placeholder="Buscar por nombre o cédula">
+    <button>Buscar</button>
+  </div>
+
+  <!-- Tabla de información personal del paciente -->
+  <table>
+    <tr>
+      <th>Nombre Completo</th>
+      <th>Estatura</th>
+      <th>Peso</th>
+      <th>Dirección</th>
+      <th>Correo</th>
+      <th>Cédula</th>
+      <th>Teléfono</th>
+    </tr>
+    <!-- Filas dinámicas desde el backend -->
+  </table>
+
+  <!-- Formulario para agregar historial médico -->
+  <form>
+    <h3>Agregar Historial Médico</h3>
+    <label for="fecha">Fecha de Visita</label>
+    <input type="date" id="fecha" name="fecha">
+
+    <label for="motivo">Motivo</label>
+    <input type="text" id="motivo" name="motivo">
+
+    <label for="diagnostico">Diagnóstico</label>
+    <input type="text" id="diagnostico" name="diagnostico">
+
+    <label for="tratamiento">Tratamiento</label>
+    <input type="text" id="tratamiento" name="tratamiento">
+
+    <label for="observaciones">Observaciones</label>
+    <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+
+    <button type="submit">Guardar Historial</button>
+  </form>
+
 </body>
 </html>

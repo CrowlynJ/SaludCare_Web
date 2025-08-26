@@ -2,66 +2,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Historial Médico</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eef2f3;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 80px auto;
-            background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .entry {
-            border-bottom: 1px solid #ccc;
-            padding: 15px 0;
-        }
-        .entry:last-child {
-            border-bottom: none;
-        }
-        .entry h4 {
-            margin: 0 0 5px;
-        }
-        .entry p {
-            margin: 5px 0;
-        }
-        .no-history {
-            text-align: center;
-            color: #888;
-            font-style: italic;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Historial Médico - Médico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+    }
+    nav {
+      background-color: #3498db;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    h2 {
+      color: #3498db;
+      margin: 20px;
+      text-align: center;
+    }
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    .mensaje {
+      text-align: center;
+      color: #e74c3c;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<nav style="background-color:#3498db; padding:10px; text-align:center;">
-    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">Inicio</a>
-    <a href="registro_paciente.html" style="color:white; margin:0 15px; text-decoration:none;">Registro</a>
-    <a href="agendar_cita.html" style="color:white; margin:0 15px; text-decoration:none;">Agendar Cita</a>
-    <a href="gestionar_citas.html" style="color:white; margin:0 15px; text-decoration:none;">Gestionar Citas</a>
-    <a href="consultar_agenda.html" style="color:white; margin:0 15px; text-decoration:none;">Consultar Agenda</a>
-    <a href="perfil_paciente.html" style="color:white; margin:0 15px; text-decoration:none;">Perfil</a>
-    <a href="historial_medico.html" style="color:white; margin:0 15px; text-decoration:none;">Historial Médico</a>
-</nav>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Consultar Citas</a>
+    <a href="#">Gestión de Agenda</a>
+    <a href="#">Historial Médico</a>
+    <a href="#">Perfil del Paciente</a>
+  </nav>
 
-    <div class="container">
-        <h2>Historial Médico</h2>
+  <h2>Historial Médico del Paciente</h2>
 
-        <!-- Historial dinámico -->
-        <div id="historial">
-            <p class="no-history">No tienes historial médico registrado.</p>
-        </div>
-    </div>
+  <!-- Tabla de historial médico -->
+  <table>
+    <tr>
+      <th>Fecha de Visita</th>
+      <th>Motivo</th>
+      <th>Diagnóstico</th>
+      <th>Tratamiento</th>
+      <th>Observaciones</th>
+    </tr>
+    <!-- Las filas se agregarán dinámicamente desde el backend -->
+  </table>
+
+  <!-- Mensaje si no hay historial -->
+  <div class="mensaje">
+    No hay historial médico disponible para este paciente.
+  </div>
+
 </body>
 </html>
